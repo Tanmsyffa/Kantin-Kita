@@ -22,7 +22,7 @@ class OrderController extends Controller
             ]);
 
             // Konfigurasi Midtrans
-            Config::$serverKey = 'SB-Mid-server-qEYmmHXWXktjXZ6iSVQNxmQ5'; // Ganti dengan milikmu
+            Config::$serverKey = 'SB-Mid-server-qEYmmHXWXktjXZ6iSVQNxmQ5';
             Config::$isProduction = false;
             Config::$isSanitized = true;
             Config::$is3ds = true;

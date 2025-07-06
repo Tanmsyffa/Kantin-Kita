@@ -11,7 +11,7 @@
 <body>
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="{{ route('admin.dashboard') }}" class="btn btn-outline-secondary me-0">
+            <a href="{{ route('admin.dashboard') }}" class="btn btn-outline-secondary">
                 <i class="fas fa-arrow-left me-2"></i>Kembali ke Dashboard
             </a>
             <h2 class="mb-0">Daftar Menu</h2>

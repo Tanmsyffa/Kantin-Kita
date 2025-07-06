@@ -30,8 +30,8 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             return Auth::user()->role === 'admin'
-                ? redirect('/admin/dashboard')
-                : redirect('/menu');
+                ? redirect()->route('admin.dashboard')
+                : redirect()->route('menu.index');
         }
 
         return back()->withErrors(['username' => 'Login gagal. Cek username dan password.']);

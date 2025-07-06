@@ -979,16 +979,6 @@ textarea.form-control {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.btn-cancel {
-    background-color: var(--secondary-color);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-weight: 600;
-    color: white;
-    transition: all 0.3s;
-}
-
 .btn-cancel:hover {
     background-color: #5a6268;
     color: white;
@@ -1439,14 +1429,13 @@ textarea.form-control {
 }
 
 .btn-cancel {
-    background: var(--secondary-color);
+    background: var(--danger-color);
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 12px 30px;
     font-weight: 600;
     cursor: pointer;
-    flex: 1;
     transition: all 0.3s;
 }
 
@@ -1689,9 +1678,6 @@ textarea.form-control {
     }
 }
 
-/* === LANDING PAGE STYLES === */
-
-/* NAVBAR */
 .landing-navbar {
     background-color: white;
     padding: 20px 40px;
@@ -1746,13 +1732,8 @@ textarea.form-control {
     width: 25px;
 }
 
-/* HERO SECTION */
 .landing-hero {
-    background: linear-gradient(
-        135deg,
-        var(--primary-color),
-        var(--info-color)
-    );
+    background: linear-gradient(135deg, #4e73df 0%, #3a86ff 100%);
     color: white;
     padding: 100px 20px;
     text-align: center;
@@ -2065,16 +2046,8 @@ textarea.form-control {
     }
 }
 
-/* Untuk animasi halus saat ikon berpindah */
 #cartIcon {
     transition: all 0.3s ease-in-out;
-}
-
-.landing-hero {
-    background: linear-gradient(135deg, #4e73df 0%, #3a86ff 100%);
-    padding: 140px 0 100px;
-    color: white;
-    margin-top: 80px;
 }
 
 .hero-content {

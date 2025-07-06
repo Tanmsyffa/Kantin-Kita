@@ -47,11 +47,6 @@
                                 </li>
                             </ul>
                         </li>
-                    @else
-                        <!-- Tombol login jika belum login -->
-                        <li class="nav-item ms-2">
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary px-4">Login</a>
-                        </li>
                     @endauth
                 </ul>
             </div>
@@ -62,9 +57,22 @@
             <div class="hero-content">
                 <h1 class="display-4 fw-bold mb-4" style="color: #FFFF;">Selamat Datang di Kantin Kita</h1>
                 <p class="lead mb-5">Nikmati makanan lezat dan terjangkau setiap hari dengan bahan-bahan berkualitas tinggi</p>
-                <a href="{{ Auth::check() ? route('menu.index') : route('login') }}" class="hero-btn">
-                    Pesan Sekarang <i class="fas fa-arrow-right ms-2"></i>
-                </a>
+                
+                @if(Auth::check())
+                    @if(Auth::user()->role === 'admin')
+                        <a href="{{ route('admin.dashboard') }}" class="hero-btn">
+                            Dashboard Admin <i class="fas fa-tachometer-alt ms-2"></i>
+                        </a>
+                    @else
+                        <a href="{{ route('menu.index') }}" class="hero-btn">
+                            Pesan Sekarang <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    @endif
+                @else
+                    <a href="{{ route('login') }}" class="hero-btn">
+                        Login untuk Memesan <i class="fas fa-sign-in-alt ms-2"></i>
+                    </a>
+                @endif
             </div>
         </div>
     </section>

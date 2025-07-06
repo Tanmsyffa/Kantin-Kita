@@ -73,10 +73,10 @@
                 </div>
                 
                 <div class="form-actions mt-4">
-                    <button type="submit" class="btn btn-success btn-lg w-100 py-3">
+                    <button type="submit" class="btn btn-success btn-lg w-100 py-2">
                         <i class="fas fa-save me-2"></i>Simpan Menu Baru
                     </button>
-                    <a href="{{ route('admin.menu.index') }}" class="btn btn-secondary mt-3">
+                    <a href="{{ route('admin.menu.index') }}" class="btn btn-secondary mt-0 w-100">
                         <i class="fas fa-arrow-left me-2"></i>Kembali ke Daftar Menu
                     </a>
                 </div>
