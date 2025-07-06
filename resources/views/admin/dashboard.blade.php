@@ -59,7 +59,7 @@
                         <li class="order-item d-flex justify-content-between align-items-center">
                             <div class="order-info">
                                 <div class="customer-name">{{ $menu->nama }}</div>
-                                <div class="table-number">Stok: {{ $menu->stok }}</div>
+                                <div>Stok: {{ $menu->stok }}</div>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span class="text-danger fw-bold">Segera Restok</span>

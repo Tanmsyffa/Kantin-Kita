@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="username" content="{{ auth()->user()->username ?? '' }}">
 </head>
 <body>
     <div class="container py-4">
@@ -17,9 +18,11 @@
                 <i class="fas fa-arrow-left me-2"></i>Kembali
             </a>
             <h2 class="mb-0">Menu Tersedia</h2>
-            <div class="cart-icon position-relative" id="cartIcon" style="cursor: pointer;">
-                <i class="fas fa-shopping-cart fa-2x"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+            <div class="d-flex align-items-center">
+                <div class="cart-icon position-relative" id="cartIcon" style="cursor: pointer;">
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                </div>
             </div>
         </div>
 
@@ -69,7 +72,7 @@
         @endif
     </div>
 
-    <!-- Offcanvas Keranjang -->
+    <!-- Keranjang -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="cartOffcanvasLabel">
@@ -92,8 +95,9 @@
                     <div id="cartHiddenInputs"></div>
 
                     <div class="mb-2">
-                        <label for="nama" class="form-label">Nama Pemesan</label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
+                        <label for="nama" class="form-label">Nama Lengkap Pemesan</label>
+                        <input type="text" class="form-control" id="nama" name="nama" 
+                               value="{{ auth()->user()->nama ?? auth()->user()->username ?? '' }}" readonly>
                     </div>
 
                     <div class="mb-2">
@@ -108,8 +112,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/cart.js"></script>
 </body>
